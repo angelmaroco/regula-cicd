@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  regula_tf_job:
+    runs-on: ubuntu-latest
+    name: Regula Terraform
+    steps:
+    - uses: actions/checkout@master
+    - uses: fugue/regula-action@v1.0.0
+      with:
+        input_path: infra_tf
+
+  regula_input_list_job:
+    runs-on: ubuntu-latest
+    name: Regula on Terraform
+    steps:
+    - uses: actions/checkout@master
+    - uses: fugue/regula-action@v1.0.0
+      with:
+        input_path: |
+          infra_tf
